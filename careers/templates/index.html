@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block page_class %}home-page{% endblock %}
+
+{% block content %}
+   <h2>What Career would you like to explore?</h2>
+   {% if careers_list %}
+    <ul>
+    {% for career in careers_list %}
+        <li>
+          <h3><a href="/careers/{{ career.id }}/">{{ career.name }}</a></h3>
+          <p>{{ career.short_description }}</p>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No careers are in our system yet.</p>
+{% endif %}
+{% endblock %}

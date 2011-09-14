@@ -1,0 +1,162 @@
+- model: careers.career
+  pk: 1
+  fields:
+    name: Advertising
+    description_short: Advertising is about communications.
+    description_long: Advertising is about communications. Advertising is about communications. Advertising is about communications.
+- model: careers.job
+  pk: 1
+  fields: 
+    title: Assistant Account Executive
+    career: 1
+    description_short: Assistant Account Executives work long hours for little money.
+    description_long: Assistant Account Executives work long hours for little money. Assistant Account Executives work long hours for little money. Assistant Account Executives work long hours for little money.
+    prerequisets: A college Degree and an internship.
+- model: careers.entry
+  pk: 1
+  fields: 
+    job: 1
+    salary: 25000
+    comment: I loved my job.
+    preceding: 
+    following: 2
+- model: careers.entry
+  pk: 2
+  fields: 
+    job: 1
+    salary: 27500
+    comment: I hated my job.
+    preceding: 
+    following: 2
+- model: careers.job
+  pk: 2
+  fields: 
+    title: Account Executive
+    career: 1
+    description_short: Account Executives work long hours for slightly more money.
+    description_long: Account Executives work long hours for slightly more money. Account Executives work long hours for slightly more money. Account Executives work long hours for slightly more money.
+    prerequisets: Be an AAE, degree, etc.
+- model: careers.entry
+  pk: 3
+  fields: 
+    job: 2
+    salary: 31000
+    comment: Pay moves up fast.
+    preceding: 1
+    following:
+- model: careers.entry
+  pk: 4
+  fields: 
+    job: 2
+    salary: 35000
+    comment: Your mome
+    preceding: 1
+    following:
+- model: careers.career
+  pk: 2
+  fields: 
+    name: Programming
+    description_short: Programming is a career field.
+    description_long: Programming is a career field. Programming is a career field. Programming is a career field.
+- model: careers.job
+  pk: 3
+  fields: 
+    title: Junior Programmer
+    career: 2
+    description_short: Junior Programmer is cool.
+    description_long: Junior Programmer is cool. Junior Programmer is cool. Junior Programmer is cool.
+    prerequisets: education
+- model: careers.entry
+  pk: 5
+  fields: 
+    job: 3
+    salary: 45000
+    comment: Good starting salary.  
+    preceding: 
+    following: 4
+- model: careers.entry
+  pk: 6
+  fields: 
+    job: 3
+    salary: 55000
+    comment: Someoe ate pizza.
+    preceding: 
+    following: 4
+- model: careers.job
+  pk: 4
+  fields: 
+    title: Programmer
+    career: 2
+    description_short: Programmer is cool. 
+    description_long: Programmer is cool. Programmer is cool. Programmer is cool. Programmer is cool.
+    prerequisets: education, training.
+- model: careers.entry
+  pk: 7
+  fields: 
+    job: 4
+    salary: 58000
+    comment: I work for pizza.
+    preceding: 3
+    following:
+- model: careers.entry
+  pk: 8
+  fields: 
+    job: 4
+    salary: 65000
+    comment: I work for soda.
+    preceding: 3
+    following:
+- model: careers.career
+  pk: 3
+  fields:
+    name: Nursing
+    description_short: Nurses help people.
+    description_long: Nurses help people. Nurses help people. Nurses help people.
+- model: careers.job
+  pk: 5
+  fields: 
+    title: Junior Nurse
+    career: 3
+    description_short: Junior Nurse helps the doctor.
+    description_long: Junior Nurse helps the doctor. Junior Nurse helps the doctor. Junior Nurse helps the doctor.
+    prerequisets: training in giving medicine.
+- model: careers.entry
+  pk: 9
+  fields: 
+    job: 5
+    salary: 35000
+    comment: Junior Nurse is a good job.
+    preceding: 
+    following: 6
+- model: careers.entry
+  pk: 10
+  fields: 
+    job: 5
+    salary: 38500
+    comment: 
+    preceding: 
+    following:
+- model: careers.job
+  pk: 6
+  fields: 
+    title: Senior Nurse
+    career: 3
+    description_short: Senior Nurse helps old people.
+    description_long: Senior Nurse helps old people. Senior Nurse helps old people. Senior Nurse helps old people.
+    prerequisets: training in using needles.
+- model: careers.entry
+  pk: 11
+  fields: 
+    job: 6
+    salary: 42000
+    comment: I liked helping old people.
+    preceding: 5
+    following:
+- model: careers.entry
+  pk: 12
+  fields: 
+    job: 6 
+    salary: 44000
+    comment: I disliked helping old people.
+    preceding: 5
+    following:
