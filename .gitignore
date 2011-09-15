@@ -1,1 +1,5 @@
 static/*
+*.sqlite3
+*~
+.db
+*.dat
