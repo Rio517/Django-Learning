@@ -9,6 +9,14 @@ def index(request):
   return render_to_response('index.html', {'careers_list': careers_list})
 
 
-def show(request):
+def show(request, career_id):
   career = get_object_or_404(Career, pk=career_id)
   return render_to_response('show.html', {'career': career})
+  
+def show_job(request, career_id, job_id):
+  job = get_object_or_404(Job, pk=job_id)
+  return render_to_response('show_job.html', {'job': job, 'career_id': career_id})
+  
+def new_job(request, career_id):
+  return HttpResponse("Placeholder for a new job in career_id: %s." % career_id)
+  

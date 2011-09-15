@@ -9,7 +9,7 @@
     {% for career in careers_list %}
         <li>
           <h3><a href="/careers/{{ career.id }}/">{{ career.name }}</a></h3>
-          <p>{{ career.short_description }}</p>
+          <p>{{ career.description_short }}</p>
         </li>
     {% endfor %}
     </ul>

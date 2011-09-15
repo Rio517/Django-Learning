@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block page_class %}home-page{% endblock %}
+
+{% block content %}
+  <h2>Let's Explore <em>{{ job.title }}</em> in <a href="/careers/{{ career_id }}">{{ job.career.name }}</a></h2>
+  <p>{{ job.description_long }}</p>
+  <p><strong>Prerequisets:</strong> {{ job.prerequisets }}</p>
+  <hr />
+  {% if job.entry_set.count > 0  %}
+    <h3>Those who have had this job:</h3>
+      <ul>
+      {% for entry in job.entry_set.all %}
+          <li>
+            <h3>[username for entry {{ entry.id }}]</h3>
+            <ul>
+              <li><strong>Salary:</strong> ${{ entry.salary|intcomma }}</li>
+              {% if entry.started_at != null %}
+                <li>From {{ entry.started_at|date:"n Y" }} to  {{ entry.ended_at|date:"n Y" }} </li>
+              {% endif %} 
+              {% if entry.comment != null  %}
+                <li><strong>Comment:</strong> {{ entry.comment }}</li>
+              {% endif %}
+              {% if entry.preceding != null  %}
+                <li><strong>Preceding Job:</strong> <a href="/careers/{{career_id }}/jobs/{{ entry.preceding.id }}">{{ entry.preceding.title }}</a></li>
+              {% endif %}
+              {% if entry.following != null %}
+                <li><strong>Following Job:</strong> <a href="/careers/{{career_id }}/jobs/{{ entry.following.id }}">{{ entry.following.title }}</a></li>
+              {% endif %}
+            </ul>
+          </li>
+      {% endfor %}
+      </ul>
+      
+  {% else %}
+    <p>No user submitted jobs are in our system yet.</p>
+  {% endif %}
+  <h3><a href="/careers/{{ career_id }}/jobs/new">Add your own experience</a></h3>
+{% endblock %}

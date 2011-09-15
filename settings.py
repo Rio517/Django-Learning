@@ -78,7 +78,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.admindocs',
-    'projectname.careers'
+    'projectname.careers',
+    'django.contrib.humanize'
 )
 
 # A sample logging configuration. The only tangible logging

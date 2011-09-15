@@ -4,16 +4,19 @@
 
 {% block content %}
    <h2>Let's Explore {{ career.name }}</h2>
-   {% if careers_list  %}
+   {% if career.job_set.count > 0  %}
     <ul>
-    {% for job in careers_list %}
+    {% for job in career.job_set.all %}
         <li>
-          <h3><a href="/careers/{{ job.id }}/">{{ job.title }}</a></h3>
-          <p>{{ career. }}</p>
+          <h3><a href="/careers/{{ career.id }}/jobs/{{ job.id }}/">{{ job.title }}</a></h3>
+          <p>{{ job.description_short }}</p>
+          <p><a href="/careers/{{ career.id }}/jobs/{{ job.id }}/">Learn more about this job.</a></p>
         </li>
     {% endfor %}
     </ul>
+    
 {% else %}
     <p>No careers are in our system yet.</p>
 {% endif %}
+
 {% endblock %}
